@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        
+        fontFamily: "modam",
       ),
       title: "Login_page",
       locale: Locale("en"),

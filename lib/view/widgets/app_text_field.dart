@@ -47,7 +47,7 @@ class _appTextFieldState extends State<appTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.text, style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 7, 43, 99)), ),
+        Text(widget.text, style: TextStyle( fontSize: 17,fontWeight: FontWeight.bold, color: const Color.fromARGB(255, 7, 43, 99)), ),
         SizedBox(height: 8,),
         TextField(  
           onChanged: widget.passwordToCompaer != null ? (text) {

@@ -45,7 +45,7 @@ class Register2Form extends StatelessWidget {
             obscuretext: true,
             controller: controllerPassword,),
           SizedBox(height: 10,),
-          appTextField(text: "Password", 
+          appTextField(text: "Confirm Password", 
             hintText: "Enter Your password agian", 
             appKeyboardType: TextInputType.visiblePassword, 
             obscuretext: true,
@@ -56,7 +56,7 @@ class Register2Form extends StatelessWidget {
           SizedBox(height: 18,),
           AppButton(onTap: (){
             if(controllerPassword.text.trim() != controllerRePass.text.trim()){
-              print("پسورد و تکرار پسورد مشابه نیست");
+              print("Passwords do not match");
               return;
             }
             onSubmit(
@@ -66,12 +66,7 @@ class Register2Form extends StatelessWidget {
               controllerRePass.text
             );
           }, title: "Sign up"),
-          // SizedBox(height: 34,),
 
-          // Align(
-          //   alignment: Alignment.center,
-          //   child: TextButton(onPressed: () {},
-          //    child: Text("Forget Password? Click here.")))
         ],
       ),
     );
