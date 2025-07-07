@@ -5,13 +5,13 @@ class AppCheckBoxTile extends StatefulWidget {
   required this.text, 
   required this.checkBoxIcon, 
   required this.onChanged, 
-
+  required this.subtitle, 
   });
 
   final String text;
   final IconData checkBoxIcon;
   final ValueChanged<bool?> onChanged;
-
+  final String subtitle;
   @override
   State<AppCheckBoxTile> createState() => AppCheckBoxTileState();
 }
@@ -40,7 +40,7 @@ class AppCheckBoxTileState extends State<AppCheckBoxTile> {
                   Text(widget.text, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                 ],
               ),
-              subtitle: Text("own or belong to a company, this is for you."),
+              subtitle: Text(widget.subtitle),
               value: isChecked, 
               onChanged: (value){
                 setState(() {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:login_page/view/pages/login/login_form.dart';
 import 'package:login_page/view/pages/login/login_page.dart';
 import 'package:login_page/view/pages/register/register1_form.dart';
+import 'package:go_router/go_router.dart';
+
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -28,8 +30,8 @@ class RegisterPage extends StatelessWidget {
                   children: [
                     Spacer(),
                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Sign up",
+                      alignment: Alignment.centerRight,
+                      child: Text("ثبت نام",
                           style: TextStyle(
                               fontSize: 38,
                               fontWeight: FontWeight.bold,
@@ -52,18 +54,14 @@ class RegisterPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Already have an account?"),
+                        Text("آیا قبلاً حساب کاربری ساخته‌اید؟"),
                         SizedBox(width: 4,),
                         InkWell(
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(builder: 
-                              (context) => LoginPage()
-                            ));
-
+                            context.go('/sign_in');
                           },
                           child: Text(
-                            "Sing in", 
+                            "ورود", 
                             style:  TextStyle(
                               fontSize: 15,
                               color: Colors.white, 

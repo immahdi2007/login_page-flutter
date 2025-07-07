@@ -8,8 +8,8 @@ import 'package:login_page/view/pages/register/register2_form.dart';
 class Register2Page extends StatelessWidget {
   const Register2Page({
     super.key, 
-    required this.isSuplier, 
-    required this.isBuyer
+    this.isSuplier = false, 
+    this.isBuyer = false
   });
 
   final bool isSuplier;
@@ -33,8 +33,8 @@ class Register2Page extends StatelessWidget {
                   children: [
                     Spacer(),
                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Sign up",
+                      alignment: Alignment.centerRight,
+                      child: Text("ثبت نام",
                           style: TextStyle(
                               fontSize: 38,
                               fontWeight: FontWeight.bold,

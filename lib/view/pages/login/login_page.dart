@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_page/view/pages/login/login_form.dart';
 import 'package:login_page/view/pages/register/register1.dart';
 
@@ -25,8 +26,8 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Spacer(),
                     Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text("Sign In",
+                      alignment: Alignment.centerRight,
+                      child: Text("ورود",
                           style: TextStyle(
                               fontSize: 38,
                               fontWeight: FontWeight.bold,
@@ -52,17 +53,14 @@ class LoginPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("No Account Yet?"),
+                        Text("هنوز حساب کاربری ندارید؟"),
                         SizedBox(width: 4,),
                         InkWell(
                           onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => RegisterPage(),)
-                            );
+                            context.go('/sign_up');
                           },
                           child: Text(
-                            "Sing up", 
+                            "ثبت نام", 
                             style:  TextStyle(
                               fontSize: 15,
                               color: Colors.white, 

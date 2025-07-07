@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:login_page/view/pages/register/register2.dart';
 import 'package:login_page/view/widgets/app_button.dart';
 import 'package:login_page/view/widgets/app_checkbox_tile.dart';
@@ -19,18 +20,21 @@ class _Register1FormState extends State<Register1Form> {
 
   Widget build(BuildContext context) {
     return Padding(
+      
       padding: const EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        
         children: [
 
-          Text("To begin this journey, tell us what type of account you'd be opening."
+          Text("لطفاً برای ادامه، نوع حساب خود را مشخص کنید."
           , style: TextStyle(fontSize: 18),),
           SizedBox(height: 10,),
-          Text("You can choose one or both."),
+          Text("می‌توانید یکی یا هر دو را انتخاب کنید."),
           SizedBox(height: 20,),
           AppCheckBoxTile(
-            text: "Supplier",
+            subtitle: "اگر صاحب یا وابسته به یک شرکت هستید، این برای شماست.",
+            text: "تامین کننده",
             checkBoxIcon: Icons.shopping_cart,
             onChanged: (value) {
               setState(() {
@@ -40,7 +44,8 @@ class _Register1FormState extends State<Register1Form> {
           ),
           SizedBox(height: 20,),
           AppCheckBoxTile(
-            text: "Buyer",
+            subtitle: "حساب شخصی برای مدیریت همه فعالیت‌های شما.",
+            text: "خریدار",
             checkBoxIcon: Icons.person,
             onChanged: (value) {
                  setState(() {
@@ -50,14 +55,21 @@ class _Register1FormState extends State<Register1Form> {
           ),
           SizedBox(height: 20,),
           AppButton(onTap: (){
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => Register2Page(
-                  isBuyer: buyerChecked,
-                  isSuplier: supplierChecked,
-                ),)
+            context.go(
+              '/sign_up/next_step',
+              extra: {
+                'isSuplier' : supplierChecked,
+                'isBuyer' : buyerChecked
+              }
             );
-          }, title: "Next step")
+            // Navigator.of(context).push(
+            //   MaterialPageRoute(
+            //     builder: (context) => Register2Page(
+            //       isBuyer: buyerChecked,
+            //       isSuplier: supplierChecked,
+            //     ),)
+            // );
+          }, title: "مرحله بعد")
         ],
       ),
     );

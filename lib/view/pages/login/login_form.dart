@@ -21,13 +21,13 @@ class LoginForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          appTextField(text: "Email", 
-            hintText: "Your Email Address", 
+          appTextField(text: "ایمیل", 
+            hintText: "آدرس ایمیل شما", 
             appKeyboardType: TextInputType.emailAddress,
             controller: controllerEmail,),
           SizedBox(height: 10,),
-          appTextField(text: "Password", 
-            hintText: "Your Password ", 
+          appTextField(text: "رمز عبور", 
+            hintText: "رمز عبور شما", 
             appKeyboardType: TextInputType.visiblePassword, 
             obscuretext: true,
             controller: controllerPassword,),
@@ -37,13 +37,13 @@ class LoginForm extends StatelessWidget {
               controllerEmail.text,
               controllerPassword.text
             );
-          }, title: "Sign in"),
+          }, title: "ورود"),
           SizedBox(height: 34,),
 
           Align(
             alignment: Alignment.center,
             child: TextButton(onPressed: () {},
-             child: Text("Forget Password? Click here.")))
+             child: Text("رمز عبور را فراموش کرده‌اید؟ اینجا کلیک کنید.")))
         ],
       ),
     );
